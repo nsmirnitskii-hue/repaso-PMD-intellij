@@ -1,5 +1,24 @@
+/*● Pide números enteros hasta conseguir 20 números positivos (>0) y únicos (no debehaber duplicados).
+● Separe los primos de los compuestos (no primos) en dos arrays.
+● Cuente cuántos son primos y cuántos compuestos.
+● Muestre por pantalla los primos en orden descendente e indique cuántos son.
+● Muestre por pantalla los compuestos en orden ascendente e indique cuántos son.*/
 fun main() {
+     var numeros: String = ""
+    var listaPrimos = mutableListOf<Int>()
+    var listaNoPrimos = mutableListOf<Int>()
 
+    println("Introduce 20 numeros, enteros")
+    for (i in 0..19){
+        numeros = readln()
+        if(esPrimo(numeros.toInt())){
+            listaPrimos.add(numeros.toInt())
+        }else{
+            listaNoPrimos.add(numeros.toInt())
+        }
+
+    }
+    println("Numeros Primos: $listaPrimos, total de numeros: ${listaPrimos.size}\n Numeros No Primos: $listaNoPrimos, total numeros: ${listaNoPrimos.size}")
 }
 
 fun esPrimo(numero: Int): Boolean {

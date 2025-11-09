@@ -1,4 +1,11 @@
-
+/*Desarrolla un programa de listado de vehículos en Kotlin:
+● Pida datos de nuevos vehículos hasta que el usuario indique lo contrario.
+● Los vehículos pueden ser de distintos tipos: Coche, Moto, Bicicleta, ... Pero el
+programa descartará todos los que no sean tipo Coche o Moto.
+● Una vez que se termine la introducción de nuevos vehículos, se visualizarán:
+● Las motos listadas de mayor a menor precio y la cantidad de motos.
+● Los coches listados alfabéticamente de la A a la Z según su marca y la cantidad de
+coches.*/
 data class Veiculos(var tipo: String, var marca: String,  var precio: Int )
 var tipo = ""
 var marca= ""
