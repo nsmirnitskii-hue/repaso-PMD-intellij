@@ -7,18 +7,25 @@ fun main() {
      var numeros: String = ""
     var listaPrimos = mutableListOf<Int>()
     var listaNoPrimos = mutableListOf<Int>()
-
-    println("Introduce 20 numeros, enteros")
-    for (i in 0..19){
-        numeros = readln()
-        if(esPrimo(numeros.toInt())){
-            listaPrimos.add(numeros.toInt())
-        }else{
-            listaNoPrimos.add(numeros.toInt())
+    while (true) {
+        try {
+            println("Introduce 20 numeros, enteros")
+            for (i in 0..19){
+                numeros = readln()
+                if(esPrimo(numeros.toInt())){
+                    listaPrimos.add(numeros.toInt())
+                }else{
+                    listaNoPrimos.add(numeros.toInt())
+                }
+            }
+            println("Numeros Primos: ${listaPrimos.sortedDescending()}, total de numeros: ${listaPrimos.size}\n " +
+                    "Numeros No Primos: ${listaNoPrimos.sorted()}, total numeros: ${listaNoPrimos.size}")
+        }catch (e: Exception){
+            println("puedes meter solo numeros")
         }
-
+        break
     }
-    println("Numeros Primos: $listaPrimos, total de numeros: ${listaPrimos.size}\n Numeros No Primos: $listaNoPrimos, total numeros: ${listaNoPrimos.size}")
+
 }
 
 fun esPrimo(numero: Int): Boolean {
